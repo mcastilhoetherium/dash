@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Urban.AI - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,14 +28,15 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background: #0f1122;>
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <img src="img/urbanai.png"  alt="Logo Urban.Ai" width="100%" height="100%" style="margin-left: -12px;">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3" style="text-align: center;">Urban.AI</div>
+
             </a>
 
             <!-- Divider -->
@@ -143,11 +144,7 @@
             </div>
 
             <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+           
 
         </ul>
         <!-- End of Sidebar -->
@@ -382,11 +379,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                Intercorrencias</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800 valor-div"  id="valor-intercorrencias">-</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -399,12 +396,12 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Earnings (Annual)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1" >
+                                                KM Percorridos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id ='km'>-</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-ruler fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -417,7 +414,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ruas Percorridas
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
@@ -433,7 +430,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                            <i class="fa fa-fw fa-road fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -447,11 +444,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
+                                                Bairros percorridos</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                            <i class="fas fa-map fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -469,7 +466,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Número total de Intercorrencias</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -493,7 +490,148 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Percentual de Intercorrencias</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Mapa de Intercorrencias</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body - Mapa -->
+                                <div class="card-body">
+                                    <!-- Div onde o mapa será renderizado -->
+                                    <div id="map" style="height: 400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- Card Body -->
+                                
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Imagens</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators" id="carousel-indicators">
+                                            <!-- Indicators will be added dynamically using JavaScript -->
+                                        </ol>
+                                        <div class="carousel-inner" id="carousel-inner">
+                                            <!-- Carousel items will be added dynamically using JavaScript -->
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                            data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Rota Percorrida</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body - Mapa -->
+                                <div class="card-body">
+                                    <!-- Div onde o mapa será renderizado -->
+                                    <div id="map2" style="height: 400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- Card Body -->
+                                
                         <!-- Pie Chart -->
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
@@ -536,7 +674,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Content Row -->
                     <div class="row">
 
@@ -700,7 +837,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Civia 2024</span>
                     </div>
                 </div>
             </footer>
@@ -753,6 +890,282 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdsld7OI4bPY91695d2o90jEiLoSapLAk&callback=initMaps" async defer></script>
+  <script>
+    // Função de callback para inicializar os mapas
+    function initMaps() {
+      initMap(); // Inicializa o primeiro mapa
+      initMap2(); // Inicializa o segundo mapa
+    }
+
+    // Função de inicialização do primeiro mapa
+    
+
+    // Função de inicialização do segundo mapa
+    function initMap2() {
+      // Coordenadas para centralizar o mapa
+      var mapCenter = {lat: -23.5505, lng: -46.6333}; // Exemplo: São Paulo, Brasil
+
+      // Cria um mapa novo dentro do elemento com o ID "map2"
+      var map = new google.maps.Map(document.getElementById('map2'), {
+        center: mapCenter, // Define o centro do mapa
+        zoom: 12 // Define o nível de zoom
+      });
+
+      // Array de coordenadas
+      var locations = [
+        {lat: -23.488471166666667, lng: -46.869169166666666}, // São Paulo, Brasil
+        {lat: 40.7128, lng: -74.0060},  // Nova York, EUA
+        {lat: 51.5074, lng: -0.1278}    // Londres, Reino Unido
+        // Adicione mais coordenadas conforme necessário
+      ];
+
+      // Loop pelas coordenadas e cria marcadores para cada uma
+      locations.forEach(function(location) {
+        var marker = new google.maps.Marker({
+          position: location, // Posição do marcador
+          map: map, // Mapa onde o marcador será exibido
+          title: 'Hello World!' // Título do marcador (opcional)
+        });
+      });
+    }
+  </script>
+ <script>
+    // URL da API que você deseja consumir
+    const apiUrl = 'http://127.0.0.1:5000/total_intercorrencias';
+    const apiUrl2 = 'http://127.0.0.1:5000/distancia_total';
+    const apiUrl3 = 'http://127.0.0.1:5000/coordenadas';
+    const apiUrl4 = 'http://127.0.0.1:5000/total_intercorrencias_por_tipo';
+    
+
+    // Variável para rastrear os marcadores no mapa
+    var markers = [];
+
+    // Função para fazer a requisição e manipular os dados recebidos
+    function fetchData() {
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao obter os dados da API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Manipular os dados recebidos
+                const total = data.total;
+                // Atualizar o valor no card com o valor extraído
+                document.getElementById('valor-intercorrencias').innerText = total;
+            })
+            .catch(error => {
+                console.error('Ocorreu um erro:', error);
+            });
+    }
+
+    function fetchData2() {
+        fetch(apiUrl2)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao obter os dados da API');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Manipular os dados recebidos
+                const total = data.distancia_total_km;
+                // Atualizar o valor no card com o valor extraído
+                document.getElementById('km').innerText = total;
+            })
+            .catch(error => {
+                console.error('Ocorreu um erro:', error);
+            });
+    }
+
+    function fetchData3() {
+        return new Promise((resolve, reject) => {
+            fetch(apiUrl3)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao obter os dados da API');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Resolve a Promise com as coordenadas
+                    resolve(data);
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                    reject(error);
+                });
+        });
+    }
+
+    // Função para limpar os marcadores do mapa
+    function clearMarkers() {
+        // Itera sobre os marcadores e os remove do mapa
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        // Limpa o array de marcadores
+        markers = [];
+    }
+    function fetchAndUpdateMap(map) {
+            fetchData3()
+                .then(coordenadasArray => {
+                    // Limpa os marcadores antigos
+                    clearMarkers();
+
+                    // Loop pelas coordenadas e cria marcadores para cada uma
+                    coordenadasArray.forEach(coordenada => {
+                        // Extrair a latitude e longitude
+                        const coordenadas = coordenada[1].replace('[', '').replace(']', '').split(',');
+                        // Separar as coordenadas em latitude e longitude
+                        const latitude = parseFloat(coordenadas[0]);
+                        const longitude = parseFloat(coordenadas[1]);
+
+                        // Cria um marcador com as coordenadas fornecidas
+                        var marker = new google.maps.Marker({
+                            position: { lat: latitude, lng: longitude }, // Posição do marcador
+                            map: map, // Mapa onde o marcador será exibido
+                            icon: {
+                                url: 'img/aviso.png', // URL da imagem personalizada
+                                scaledSize: new google.maps.Size(5, 5) // Tamanho do ícone (largura, altura)
+                            } // Título do marcador (opcional)
+                        });
+
+                        // Criar o conteúdo da infowindow
+                        var contentString = '<div>' +
+                            '<p>Tipo: ' + coordenada[0] + '</p>' +
+                            '<img src="' + coordenada[2].replace('/var/www/apis/carros/', 'https://carros.meumunicipio.online/') + '" width="250px" height="250px">' +
+                            '</div>';
+
+                        // Cria a infowindow
+                        var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+
+                        // Adiciona um listener para mostrar a infowindow ao passar o mouse sobre o marcador
+                        marker.addListener('mouseover', function () {
+                            infowindow.open(map, marker);
+                        });
+
+                        // Adiciona um listener para fechar a infowindow ao retirar o mouse do marcador
+                        marker.addListener('mouseout', function () {
+                            infowindow.close();
+                        });
+
+                        // Adiciona o marcador ao array de marcadores
+                        markers.push(marker);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao obter coordenadas:', error);
+                });
+        }
+
+        // Função para fazer a requisição e atualizar o gráfico de pizza
+        function fetchDataAndUpdateChart() {
+            fetch(apiUrl4) // Substitua apiUrl pela URL da sua API
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro ao obter os dados da API');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Extrair os rótulos e os valores do array de dados
+                    const labels = data.map(item => item[0]);
+                    const values = data.map(item => item[1]);
+
+                    // Função para gerar uma cor aleatória em formato hexadecimal
+                    function randomColor() {
+                        const palette = ['#0a4d82', '#65357f'];
+                return palette[Math.floor(Math.random() * palette.length)];
+                }
+
+                    // Gerar cores aleatórias para o gráfico
+                    const backgroundColor = labels.map(() => randomColor());
+
+                    // Configurar o gráfico de pizza
+                    var ctx = document.getElementById('myPieChart').getContext('2d');
+                    var myPieChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: values,
+                                backgroundColor: backgroundColor,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: false // Remover a legenda
+                            }
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                });
+        }
+
+        // Função para inicializar o mapa
+        function initMap() {
+            // Coordenadas para centralizar o mapa
+            var mapCenter = { lat: -23.5505, lng: -46.6333 }; // Exemplo: São Paulo, Brasil
+
+            // Cria um mapa novo dentro do elemento com o ID "map"
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: mapCenter, // Define o centro do mapa
+                zoom: 12 // Define o nível de zoom
+            });
+            function fetchAndUpdateCarousel() {
+            fetch('URL_DA_API') // Substitua 'URL_DA_API' pela URL da sua API
+                .then(response => response.json())
+                .then(data => {
+                    const carouselIndicators = document.getElementById('carousel-indicators');
+                    const carouselInner = document.getElementById('carousel-inner');
+                    
+                    // Limpa os indicadores e itens do carrossel
+                    carouselIndicators.innerHTML = '';
+                    carouselInner.innerHTML = '';
+                    
+                    // Adiciona as imagens ao carrossel
+                    data.forEach((image, index) => {
+                        const indicator = document.createElement('li');
+                        indicator.setAttribute('data-target', '#carouselExampleIndicators');
+                        indicator.setAttribute('data-slide-to', index.toString());
+                        if (index === 0) indicator.classList.add('active');
+                        carouselIndicators.appendChild(indicator);
+                        
+                        const item = document.createElement('div');
+                        item.classList.add('carousel-item');
+                        if (index === 0) item.classList.add('active');
+                        const img = document.createElement('img');
+                        // Ajusta o caminho da imagem
+                        img.src = image[1].replace('/var/www/apis/carros/', 'https://carros.meumunicipio.online/');
+                        img.classList.add('d-block', 'w-100');
+                        item.appendChild(img);
+                        carouselInner.appendChild(item);
+                    });
+                })
+                .catch(error => console.error('Erro ao obter imagens da API:', error));
+        }
+            // Atualiza o mapa inicialmente e a cada 10 segundos
+            setInterval(function () {
+                fetchData();
+                fetchData2();
+                fetchAndUpdateMap(map);
+                fetchDataAndUpdateChart();
+            }, 10000);
+        }
+    </script>
+
+</script>
+</script>
+
 
 </body>
 
